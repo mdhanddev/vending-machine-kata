@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     allPass &= harness("short money, select cola, check display twice", (string)"0.10", vmt.withShortMoneySelectColaCheckDisplayTwiceMachineDisplaysCurrentTotal());
     allPass &= harness("short money, select chips, check display", (string)"PRICE 0.50", vmt.withShortMoneySelectChipsMachineDisplaysChipsPrice());
     allPass &= harness("short money, select chips, check display twice", (string)"0.25", vmt.withShortMoneySelectChipsCheckDisplayTwiceMachineDisplaysCurrentTotal());
-    //todo short money, press candy, check display PRICE 0.65
+    allPass &= harness("short money, select candy, check display", (string)"PRICE 0.65", vmt.withShortMoneySelectCandyMachineDisplaysCandyPrice());
     //todo short money, press candy, check display twice, shows current total
     //todo buy soda with exact change, soda dispensed
     //todo buy soda with exact change, check display THANK YOU
