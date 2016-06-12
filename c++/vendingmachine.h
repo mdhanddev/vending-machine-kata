@@ -59,10 +59,12 @@ private:
     deque<PRODUCT> dispenser;
 
     PRODUCT selectedProduct;
+    float selectedProductCost;
 
     bool productPurchasedSinceLastDisplayCheck = false;
 
     float insertedCoinTotal();
+    void attemptPurchase();
 };
 
 #endif // VENDINGMACHINE_H
