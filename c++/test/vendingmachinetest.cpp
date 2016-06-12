@@ -218,3 +218,11 @@ string VendingMachineTest::withShortMoneySelectChipsCheckDisplayTwiceMachineDisp
     vm.checkDisplay();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withShortMoneySelectCandyMachineDisplaysCandyPrice()
+{
+    cleanMachineState();
+    insertNickelLikeCoin();
+    vm.pressSelectCandyButton();
+    return vm.checkDisplay();
+}
