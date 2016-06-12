@@ -13,7 +13,9 @@ VendingMachine::VendingMachine()
 
 string VendingMachine::checkDisplay()
 {
-    if(selectedProduct == PRODUCT_COLA){
+    if(productPurchasedSinceLastDisplayCheck){
+        return "THANK YOU";
+    }else if(selectedProduct == PRODUCT_COLA){
         selectedProduct = PRODUCT_NONE;
         return "PRICE 1.00";
     }else if(selectedProduct == PRODUCT_CHIPS){
@@ -75,7 +77,11 @@ void VendingMachine::pressSelectColaButton()
         if(coin == COIN_NICKEL) total += .05;
         if(coin == COIN_QUARTER) total += .25;
     });
-    if(total >= 1.00) dispenser.push_front(PRODUCT_COLA);
+    if(total >= 1.00){
+        dispenser.push_front(PRODUCT_COLA);
+        selectedProduct = PRODUCT_NONE;
+        productPurchasedSinceLastDisplayCheck = true;
+    }
 }
 
 void VendingMachine::pressSelectChipsButton()

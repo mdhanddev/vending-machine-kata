@@ -246,3 +246,14 @@ PRODUCT VendingMachineTest::withExactChangeSelectColaMachineDispensesCola()
     vm.pressSelectColaButton();
     return vm.checkDispenser();
 }
+
+string VendingMachineTest::withExactChangeSelectColaMachineDisplaysThankYou()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    vm.pressSelectColaButton();
+    return vm.checkDisplay();
+}

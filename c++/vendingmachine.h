@@ -56,6 +56,8 @@ private:
     deque<PRODUCT> dispenser;
 
     PRODUCT selectedProduct;
+
+    bool productPurchasedSinceLastDisplayCheck = false;
 };
 
 #endif // VENDINGMACHINE_H
