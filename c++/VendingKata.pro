@@ -19,4 +19,4 @@ SOURCES += main.cpp \
 
 HEADERS += \
     vendingmachine.h \
-    vendingmachinetest.h
+    test/vendingmachinetest.h
