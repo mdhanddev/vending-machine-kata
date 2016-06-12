@@ -17,6 +17,7 @@ string VendingMachine::checkDisplay()
         selectedProduct = PRODUCT_NONE;
         return "PRICE 1.00";
     }else if(selectedProduct == PRODUCT_CHIPS){
+        selectedProduct = PRODUCT_NONE;
         return "PRICE 0.50";
     }else if(coins.empty()){
         return "INSERT COIN";

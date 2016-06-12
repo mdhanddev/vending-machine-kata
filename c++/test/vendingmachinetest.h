@@ -38,6 +38,7 @@ public:
     string withNoMoneySelectColaMachineDisplaysColaPrice();
     string withNoMoneySelectColaCheckDisplayTwiceMachineDisplaysInsertCoins();
     string withNoMoneySelectChipsMachineDisplaysChipsPrice();
+    string withNoMoneySelectChipsCheckDisplayTwiceMachineDisplaysInsertCoins();
 };
 
 #endif // VENDINGMACHINETEST_H
