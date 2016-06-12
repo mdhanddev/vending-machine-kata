@@ -37,6 +37,7 @@ public:
     //use case "Select Product"
     string withNoMoneySelectColaMachineDisplaysColaPrice();
     string withNoMoneySelectColaCheckDisplayTwiceMachineDisplaysInsertCoins();
+    string withNoMoneySelectChipsMachineDisplaysChipsPrice();
 };
 
 #endif // VENDINGMACHINETEST_H

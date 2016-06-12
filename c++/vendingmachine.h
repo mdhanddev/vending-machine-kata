@@ -30,6 +30,7 @@ enum COIN{
 enum PRODUCT{
     PRODUCT_NONE,
     PRODUCT_COLA,
+    PRODUCT_CHIPS,
     PRODUCT_OTHER
 };
 
@@ -44,6 +45,7 @@ public:
     void insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize);
     void pressReturnCoinsButton();
     void pressSelectColaButton();
+    void pressSelectChipsButton();
 
 private:
     deque<int> coins;

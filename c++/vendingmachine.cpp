@@ -16,6 +16,8 @@ string VendingMachine::checkDisplay()
     if(selectedProduct == PRODUCT_COLA){
         selectedProduct = PRODUCT_NONE;
         return "PRICE 1.00";
+    }else if(selectedProduct == PRODUCT_CHIPS){
+        return "PRICE 0.50";
     }else if(coins.empty()){
         return "INSERT COIN";
     }else{
@@ -53,4 +55,9 @@ void VendingMachine::pressReturnCoinsButton()
 void VendingMachine::pressSelectColaButton()
 {
     selectedProduct = PRODUCT_COLA;
+}
+
+void VendingMachine::pressSelectChipsButton()
+{
+    selectedProduct = PRODUCT_CHIPS;
 }
