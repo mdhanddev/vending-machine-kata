@@ -30,13 +30,11 @@ int main(int argc, char *argv[])
     allPass &= harness("coin return on invalid coins", 3, vmt.insertInvalidCoinsCoinReturnHasCoins());
 
     //use case "Return Coins"
-    //todo insert N valid coins, press return coins, N coins are in return
     allPass &= harness("insert coins, press return, check coin return", 4, vmt.insertValidCoinsPressReturnCoinsCoinReturnHasCoins());
     allPass &= harness("insert coins, press return, check return for same coins", true, vmt.insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins());
     allPass &= harness("insert coins, press return, check for coins in machine", 0, vmt.insertValidCoinsPressReturnCoinsMachineHasNoCoins());
     allPass &= harness("insert coins, press return, check display", (string)"INSERT COIN", vmt.insertValidCoinsPressReturnCoinsMachineDisplaysInsertCoin());
 
-    //todo
     //use case "Select Product"
     allPass &= harness("no money, select cola, check display", (string)"PRICE 1.00", vmt.withNoMoneySelectColaMachineDisplaysColaPrice());
     allPass &= harness("no money, select cola, check display twice", (string)"INSERT COIN", vmt.withNoMoneySelectColaCheckDisplayTwiceMachineDisplaysInsertCoins());
