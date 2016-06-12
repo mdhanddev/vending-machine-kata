@@ -36,5 +36,7 @@ void VendingMachine::insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize)
         coins.push_front(COIN_NICKEL);
     }else if(cweight == CW_QUARTER && csize == CS_QUARTER){
         coins.push_front(COIN_QUARTER);
+    }else{
+        coinreturn.push_front(COIN_INVALID);
     }
 }

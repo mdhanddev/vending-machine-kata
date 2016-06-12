@@ -57,3 +57,14 @@ string VendingMachineTest::insertInvalidCoinsMachineDisplaysInsertCoin()
     vm.insertCoin(CW_QUARTER, CS_OTHER);
     return vm.checkDisplay();
 }
+
+int VendingMachineTest::insertInvalidCoinsCoinReturnHasCoins()
+{
+    //force coin return to empty
+    vm.coinreturn.clear();
+    //add several bogus coins
+    vm.insertCoin(CW_OTHER, CS_OTHER);
+    vm.insertCoin(CW_DIME, CS_NICKEL);
+    vm.insertCoin(CW_QUARTER, CS_OTHER);
+    return vm.coinreturn.size();
+}
