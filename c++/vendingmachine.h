@@ -1,7 +1,12 @@
 #ifndef VENDINGMACHINE_H
 #define VENDINGMACHINE_H
 
+#include <iostream>
+#include <deque>
+
 class VendingMachineTest;
+
+using namespace std;
 
 class VendingMachine
 {
@@ -9,6 +14,10 @@ class VendingMachine
 
 public:
     VendingMachine();
+
+    string checkDisplay();
+
+    deque<int> coins;
 
 };
 

@@ -8,5 +8,11 @@ using namespace std;
 
 VendingMachineTest::VendingMachineTest()
 {
-    VendingMachine vm;
+}
+
+string VendingMachineTest::noCoinsInsertedVendingMachineDisplaysInsertCoin()
+{
+    //force coins to empty
+    vm.coins.empty();
+    return vm.checkDisplay();
 }

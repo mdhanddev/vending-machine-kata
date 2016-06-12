@@ -1,8 +1,8 @@
 #include <iostream>
 
-using namespace std;
-
 #include "vendingmachinetest.h"
+
+using namespace std;
 
 template <class T>
 bool harness(string testname, T expected, T result){
@@ -17,9 +17,23 @@ int main(int argc, char *argv[])
 {
     VendingMachineTest vmt;
 
-    //couple quick and dirty tests to make sure the harness works
-    harness("harness pass test", true, true);
-    harness("harness fail test", true, false);
-    harness("harness type pass test", 3, 3);
-    harness("harness type fail test", 3, 5);
+    //use case "Accept Coins"
+    harness("machine display when no coins inserted", (string)"INSERT COIN", vmt.noCoinsInsertedVendingMachineDisplaysInsertCoin());
+    //todo inserting valid coin (and check display)
+    //todo inserting invalid coin (and check display)
+
+    //todo
+    //use case "Select Product"
+
+    //todo
+    //use case "Make Change"
+
+    //todo
+    //use case "Return Coins"
+
+    //todo
+    //use case "Sold Out"
+
+    //todo
+    //use case "Exact Change Only"
 }
