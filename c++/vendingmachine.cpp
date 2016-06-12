@@ -14,6 +14,7 @@ VendingMachine::VendingMachine()
 string VendingMachine::checkDisplay()
 {
     if(productPurchasedSinceLastDisplayCheck){
+        productPurchasedSinceLastDisplayCheck = false;
         return "THANK YOU";
     }else if(selectedProduct == PRODUCT_COLA){
         selectedProduct = PRODUCT_NONE;
@@ -81,6 +82,7 @@ void VendingMachine::pressSelectColaButton()
         dispenser.push_front(PRODUCT_COLA);
         selectedProduct = PRODUCT_NONE;
         productPurchasedSinceLastDisplayCheck = true;
+        coins.clear();
     }
 }
 

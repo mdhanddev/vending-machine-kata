@@ -257,3 +257,15 @@ string VendingMachineTest::withExactChangeSelectColaMachineDisplaysThankYou()
     vm.pressSelectColaButton();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withExactChangeSelectColaCheckDisplayTwiceMachineDisplaysInsertCoin()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    vm.pressSelectColaButton();
+    vm.checkDisplay();
+    return vm.checkDisplay();
+}
