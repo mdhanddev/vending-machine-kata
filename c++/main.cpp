@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     //use case "Return Coins"
     //todo insert N valid coins, press return coins, N coins are in return
     allPass &= harness("insert coins, press return, check coin return", 4, vmt.insertValidCoinsPressReturnCoinsCoinReturnHasCoins());
-    //todo insert valid coins c1 c2 c3, press return coins, coins c1 c2 c3 are in return
+    allPass &= harness("insert coins, press return, check return for same coins", true, vmt.insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins());
     //todo insert valid coins, press return coins, coins in machine is 0
     //todo insert valid coins, press return coins, display shows INSERT COIN
 

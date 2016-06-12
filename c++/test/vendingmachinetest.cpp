@@ -95,3 +95,26 @@ int VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasCoins()
     vm.pressReturnCoinsButton();
     return vm.coinreturn.size();
 }
+#include <algorithm>
+bool VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins()
+{
+    cleanMachineState();
+    //add several valid coins
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertNickelLikeCoin();
+    insertDimeLikeCoin();
+    insertDimeLikeCoin();
+    vm.pressReturnCoinsButton();
+
+    //coins get returned in reverse order
+    if(   vm.coinreturn.at(0) == COIN_DIME
+       && vm.coinreturn.at(1) == COIN_DIME
+       && vm.coinreturn.at(2) == COIN_NICKEL
+       && vm.coinreturn.at(3) == COIN_QUARTER
+       && vm.coinreturn.at(4) == COIN_QUARTER){
+        return true;
+    }else{
+        return false;
+    }
+}
