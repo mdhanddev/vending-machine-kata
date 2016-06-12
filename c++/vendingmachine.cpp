@@ -91,6 +91,8 @@ void VendingMachine::pressSelectChipsButton()
 void VendingMachine::pressSelectCandyButton()
 {
     selectedProduct = PRODUCT_CANDY;
+    selectedProductCost = 0.65;
+    attemptPurchase();
 }
 
 float VendingMachine::insertedCoinTotal()

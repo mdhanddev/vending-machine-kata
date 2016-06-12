@@ -55,6 +55,7 @@ int main(int argc, char *argv[])
     allPass &= harness("exact change, select chips, check display", (string)"THANK YOU", vmt.withExactChangeSelectChipsMachineDisplaysThankYou());
     allPass &= harness("exact change, select chips, check display twice", (string)"INSERT COIN", vmt.withExactChangeSelectChipsCheckDisplayTwiceMachineDisplaysInsertCoin());
     //todo exact change, select candy, candy dispensed
+    allPass &= harness("exact change, select candy, candy dispensed", PRODUCT_CANDY, vmt.withExactChangeSelectCandyMachineDispensesCandy());
     //todo exact change, select candy, check display
     //todo exact change, select candy, check display twice
 

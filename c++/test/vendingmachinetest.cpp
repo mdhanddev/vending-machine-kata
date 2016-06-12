@@ -298,3 +298,14 @@ string VendingMachineTest::withExactChangeSelectChipsCheckDisplayTwiceMachineDis
     vm.checkDisplay();
     return vm.checkDisplay();
 }
+
+PRODUCT VendingMachineTest::withExactChangeSelectCandyMachineDispensesCandy()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertDimeLikeCoin();
+    insertNickelLikeCoin();
+    vm.pressSelectCandyButton();
+    return vm.checkDispenser();
+}
