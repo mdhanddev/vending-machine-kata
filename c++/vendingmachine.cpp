@@ -44,4 +44,5 @@ void VendingMachine::insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize)
 void VendingMachine::pressReturnCoinsButton()
 {
     coinreturn.insert(coinreturn.end(), coins.begin(), coins.end());
+    coins.clear();
 }

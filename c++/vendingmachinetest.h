@@ -31,6 +31,7 @@ public:
     //use case "Return Coins"
     int insertValidCoinsPressReturnCoinsCoinReturnHasCoins();
     bool insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins();
+    int insertValidCoinsPressReturnCoinsMachineHasNoCoins();
 };
 
 #endif // VENDINGMACHINETEST_H

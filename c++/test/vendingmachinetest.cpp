@@ -118,3 +118,13 @@ bool VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins(
         return false;
     }
 }
+
+int VendingMachineTest::insertValidCoinsPressReturnCoinsMachineHasNoCoins()
+{
+    cleanMachineState();
+    insertNickelLikeCoin();
+    insertDimeLikeCoin();
+    insertQuarterLikeCoin();
+    vm.pressReturnCoinsButton();
+    return vm.coins.size();
+}
