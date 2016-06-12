@@ -12,9 +12,9 @@ VendingMachineTest::VendingMachineTest()
 
 void VendingMachineTest::cleanMachineState()
 {
-    vm.coins.clear();
-    vm.coinreturn.clear();
-    vm.dispenser.clear();
+    vm.pressReturnCoinsButton();
+    while(COIN_NONE != vm.checkCoinReturn()){}
+    while(PRODUCT_NONE != vm.checkDispenser()){}
 }
 
 void VendingMachineTest::insertDimeLikeCoin()
