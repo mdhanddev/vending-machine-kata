@@ -192,3 +192,12 @@ string VendingMachineTest::withShortMoneySelectColaMachineDisplaysColaPrice()
     vm.pressSelectColaButton();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withShortMoneySelectColaCheckDisplayTwiceMachineDisplaysCurrentTotal()
+{
+    cleanMachineState();
+    insertDimeLikeCoin();
+    vm.pressSelectColaButton();
+    vm.checkDisplay();
+    return vm.checkDisplay();
+}

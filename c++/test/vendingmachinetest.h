@@ -42,6 +42,7 @@ public:
     string withNoMoneySelectCandyMachineDisplaysCandyPrice();
     string withNoMoneySelectCandyCheckDisplayTwiceMachineDisplaysInsertCoins();
     string withShortMoneySelectColaMachineDisplaysColaPrice();
+    string withShortMoneySelectColaCheckDisplayTwiceMachineDisplaysCurrentTotal();
 };
 
 #endif // VENDINGMACHINETEST_H
