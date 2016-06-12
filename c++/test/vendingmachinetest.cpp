@@ -309,3 +309,14 @@ PRODUCT VendingMachineTest::withExactChangeSelectCandyMachineDispensesCandy()
     vm.pressSelectCandyButton();
     return vm.checkDispenser();
 }
+
+string VendingMachineTest::withExactChangeSelectCandyMachineDisplaysThankYou()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertDimeLikeCoin();
+    insertNickelLikeCoin();
+    vm.pressSelectCandyButton();
+    return vm.checkDisplay();
+}
