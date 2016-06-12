@@ -279,3 +279,12 @@ PRODUCT VendingMachineTest::withExactChangeSelectChipsMachineDispensesChips()
     vm.pressSelectChipsButton();
     return vm.checkDispenser();
 }
+
+string VendingMachineTest::withExactChangeSelectChipsMachineDisplaysThankYou()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    vm.pressSelectChipsButton();
+    return vm.checkDisplay();
+}

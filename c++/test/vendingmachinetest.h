@@ -51,6 +51,7 @@ public:
     string withExactChangeSelectColaMachineDisplaysThankYou();
     string withExactChangeSelectColaCheckDisplayTwiceMachineDisplaysInsertCoin();
     PRODUCT withExactChangeSelectChipsMachineDispensesChips();
+    string withExactChangeSelectChipsMachineDisplaysThankYou();
 };
 
 #endif // VENDINGMACHINETEST_H
