@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "vendingmachinetest.h"
+#include "test/vendingmachinetest.h"
 
 using namespace std;
 
