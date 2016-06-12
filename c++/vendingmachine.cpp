@@ -20,6 +20,7 @@ string VendingMachine::checkDisplay()
         selectedProduct = PRODUCT_NONE;
         return "PRICE 0.50";
     }else if(selectedProduct == PRODUCT_CANDY){
+        selectedProduct = PRODUCT_NONE;
         return "PRICE 0.65";
     }else if(coins.empty()){
         return "INSERT COIN";

@@ -176,3 +176,11 @@ string VendingMachineTest::withNoMoneySelectCandyMachineDisplaysCandyPrice()
     vm.pressSelectCandyButton();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withNoMoneySelectCandyCheckDisplayTwiceMachineDisplaysInsertCoins()
+{
+    cleanMachineState();
+    vm.pressSelectCandyButton();
+    vm.checkDisplay();
+    return vm.checkDisplay();
+}
