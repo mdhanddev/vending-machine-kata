@@ -146,3 +146,11 @@ string VendingMachineTest::withNoMoneySelectColaMachineDisplaysColaPrice()
     return vm.checkDisplay();
 
 }
+
+string VendingMachineTest::withNoMoneySelectColaCheckDisplayTwiceMachineDisplaysInsertCoins()
+{
+    cleanMachineState();
+    vm.pressSelectColaButton();
+    vm.checkDisplay();
+    return vm.checkDisplay();
+}
