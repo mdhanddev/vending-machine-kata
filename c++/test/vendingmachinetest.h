@@ -55,6 +55,7 @@ public:
     string withExactChangeSelectChipsCheckDisplayTwiceMachineDisplaysInsertCoin();
     PRODUCT withExactChangeSelectCandyMachineDispensesCandy();
     string withExactChangeSelectCandyMachineDisplaysThankYou();
+    string withExactChangeSelectCandyCheckDisplayTwiceMachineDisplaysInsertCoin();
 };
 
 #endif // VENDINGMACHINETEST_H

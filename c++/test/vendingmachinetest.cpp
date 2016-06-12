@@ -320,3 +320,15 @@ string VendingMachineTest::withExactChangeSelectCandyMachineDisplaysThankYou()
     vm.pressSelectCandyButton();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withExactChangeSelectCandyCheckDisplayTwiceMachineDisplaysInsertCoin()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertDimeLikeCoin();
+    insertNickelLikeCoin();
+    vm.pressSelectCandyButton();
+    vm.checkDisplay();
+    return vm.checkDisplay();
+}
