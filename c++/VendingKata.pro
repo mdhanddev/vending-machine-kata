@@ -13,4 +13,10 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    vendingmachine.cpp \
+    test/vendingmachinetest.cpp
+
+HEADERS += \
+    vendingmachine.h \
+    vendingmachinetest.h
