@@ -235,3 +235,14 @@ string VendingMachineTest::withShortMoneySelectCandyCheckDisplayTwiceMachineDisp
     vm.checkDisplay();
     return vm.checkDisplay();
 }
+
+PRODUCT VendingMachineTest::withExactChangeSelectColaMachineDispensesCola()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    vm.pressSelectColaButton();
+    return vm.checkDispenser();
+}

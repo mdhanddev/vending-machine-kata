@@ -43,6 +43,7 @@ public:
     VendingMachine();
 
     string checkDisplay();
+    PRODUCT checkDispenser();
     void insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize);
     void pressReturnCoinsButton();
     void pressSelectColaButton();
@@ -52,6 +53,7 @@ public:
 private:
     deque<int> coins;
     deque<int> coinreturn;
+    deque<PRODUCT> dispenser;
 
     PRODUCT selectedProduct;
 };

@@ -37,6 +37,16 @@ string VendingMachine::checkDisplay()
     }
 }
 
+PRODUCT VendingMachine::checkDispenser()
+{
+    if(dispenser.empty()) return PRODUCT_NONE;
+    else {
+        PRODUCT prod = dispenser.at(0);
+        dispenser.pop_front();
+        return prod;
+    }
+}
+
 void VendingMachine::insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize)
 {
     if(cweight == CW_DIME && csize == CS_DIME){
@@ -59,6 +69,13 @@ void VendingMachine::pressReturnCoinsButton()
 void VendingMachine::pressSelectColaButton()
 {
     selectedProduct = PRODUCT_COLA;
+    float total = 0;
+    for_each(coins.begin(), coins.end(), [&total](int &coin){
+        if(coin == COIN_DIME) total += .10;
+        if(coin == COIN_NICKEL) total += .05;
+        if(coin == COIN_QUARTER) total += .25;
+    });
+    if(total >= 1.00) dispenser.push_front(PRODUCT_COLA);
 }
 
 void VendingMachine::pressSelectChipsButton()
