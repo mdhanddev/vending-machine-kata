@@ -38,6 +38,24 @@ int main(int argc, char *argv[])
 
     //todo
     //use case "Select Product"
+    //todo no money, press cola, check display PRICE 1.00
+    //todo no money, press cola, check display twice INSERT COINS
+    //todo no money, prsss chips, check display PRICE 0.50
+    //todo no money, press chips, check display twice INSERT COINS
+    //todo no money, press candy, check display PRICE 0.65
+    //todo no money, press candy, check display twice INSERT COINS
+    //todo short money, press cola, check display PRICE 1.00
+    //todo short money, press cola, check display twice, shows current total
+    //todo short money, press chips, check display PRICE 0.50
+    //todo short money, press chips, check display twice, shows current total
+    //todo short money, press candy, check display PRICE 0.65
+    //todo short money, press candy, check display twice, shows current total
+    //todo buy soda with exact change, soda dispensed
+    //todo buy soda with exact change, check display THANK YOU
+    //todo buy soda with exact change, check display twice INSERT COINS
+    //todo buy soda with excess money, soda dispensed
+    //todo buy soda with excess money, check display THANK YOU
+    //todo buy soda with excess money, check display twice INSERT COINS
 
     //todo
     //use case "Sold Out"
