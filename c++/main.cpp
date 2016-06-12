@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
 {
     VendingMachineTest vmt;
 
+    //couple quick and dirty tests to make sure the harness works
     harness("harness pass test", true, true);
     harness("harness fail test", true, false);
     harness("harness type pass test", 3, 3);
