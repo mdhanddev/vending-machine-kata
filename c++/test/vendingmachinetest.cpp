@@ -10,17 +10,21 @@ VendingMachineTest::VendingMachineTest()
 {
 }
 
+void VendingMachineTest::cleanMachineState()
+{
+    vm.coins.clear();
+    vm.coinreturn.clear();
+}
+
 string VendingMachineTest::noCoinsInsertedVendingMachineDisplaysInsertCoin()
 {
-    //force coins to empty
-    vm.coins.clear();
+    cleanMachineState();
     return vm.checkDisplay();
 }
 
 string VendingMachineTest::insertDimeLikeCoinMachineDisplaysTenCents()
 {
-    //force coins to empty
-    vm.coins.clear();
+    cleanMachineState();
     //add a dime-like coin
     vm.insertCoin(CW_DIME, CS_DIME);
     //check display
@@ -29,8 +33,7 @@ string VendingMachineTest::insertDimeLikeCoinMachineDisplaysTenCents()
 
 string VendingMachineTest::insertNickelLikeCoinMachineDisplaysFiveCents()
 {
-    //force coins to empty
-    vm.coins.clear();
+    cleanMachineState();
     //add a nickel-like coin
     vm.insertCoin(CW_NICKEL, CS_NICKEL);
     //check display
@@ -39,8 +42,7 @@ string VendingMachineTest::insertNickelLikeCoinMachineDisplaysFiveCents()
 
 string VendingMachineTest::insertQuarterLikeCoinMachineDisplaysTwentyFiveCents()
 {
-    //force coins to empty
-    vm.coins.clear();
+    cleanMachineState();
     //add a quarter-like coin
     vm.insertCoin(CW_QUARTER, CS_QUARTER);
     //check display
@@ -49,8 +51,7 @@ string VendingMachineTest::insertQuarterLikeCoinMachineDisplaysTwentyFiveCents()
 
 string VendingMachineTest::insertInvalidCoinsMachineDisplaysInsertCoin()
 {
-    //force coins to empty
-    vm.coins.clear();
+    cleanMachineState();
     //add several bogus coins
     vm.insertCoin(CW_OTHER, CS_OTHER);
     vm.insertCoin(CW_DIME, CS_NICKEL);
@@ -60,8 +61,7 @@ string VendingMachineTest::insertInvalidCoinsMachineDisplaysInsertCoin()
 
 int VendingMachineTest::insertInvalidCoinsCoinReturnHasCoins()
 {
-    //force coin return to empty
-    vm.coinreturn.clear();
+    cleanMachineState();
     //add several bogus coins
     vm.insertCoin(CW_OTHER, CS_OTHER);
     vm.insertCoin(CW_DIME, CS_NICKEL);

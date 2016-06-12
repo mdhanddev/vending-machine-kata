@@ -14,6 +14,10 @@ public:
 
     VendingMachine vm;
 
+    //helpers
+    void cleanMachineState();
+
+    //use case "Accept Coins"
     string noCoinsInsertedVendingMachineDisplaysInsertCoin();
     string insertDimeLikeCoinMachineDisplaysTenCents();
     string insertNickelLikeCoinMachineDisplaysFiveCents();

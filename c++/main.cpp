@@ -8,22 +8,26 @@ template <class T>
 bool harness(string testname, T expected, T result){
     if(expected == result){
         cout << "PASS " << testname << endl;
+        return true;
     }else{
         cout << "!!-- FAIL " << testname << ": returned " << result << " when " << expected << " was expected" << endl;
     }
+    return false;
 }
 
 int main(int argc, char *argv[])
 {
     VendingMachineTest vmt;
 
+    bool allPass(true);
+
     //use case "Accept Coins"
-    harness("machine display when no coins inserted", (string)"INSERT COIN", vmt.noCoinsInsertedVendingMachineDisplaysInsertCoin());
-    harness("machine display on dime", (string)"0.10", vmt.insertDimeLikeCoinMachineDisplaysTenCents());
-    harness("machine display on nickel", (string)"0.05", vmt.insertNickelLikeCoinMachineDisplaysFiveCents());
-    harness("machine display on quarter", (string)"0.25", vmt.insertQuarterLikeCoinMachineDisplaysTwentyFiveCents());
-    harness("machine display on invalid coins", (string)"INSERT COIN", vmt.insertInvalidCoinsMachineDisplaysInsertCoin());
-    harness("coin return on invalid coins", 3, vmt.insertInvalidCoinsCoinReturnHasCoins());
+    allPass &= harness("machine display when no coins inserted", (string)"INSERT COIN", vmt.noCoinsInsertedVendingMachineDisplaysInsertCoin());
+    allPass &= harness("machine display on dime", (string)"0.10", vmt.insertDimeLikeCoinMachineDisplaysTenCents());
+    allPass &= harness("machine display on nickel", (string)"0.05", vmt.insertNickelLikeCoinMachineDisplaysFiveCents());
+    allPass &= harness("machine display on quarter", (string)"0.25", vmt.insertQuarterLikeCoinMachineDisplaysTwentyFiveCents());
+    allPass &= harness("machine display on invalid coins", (string)"INSERT COIN", vmt.insertInvalidCoinsMachineDisplaysInsertCoin());
+    allPass &= harness("coin return on invalid coins", 3, vmt.insertInvalidCoinsCoinReturnHasCoins());
 
     //todo
     //use case "Select Product"
@@ -39,4 +43,7 @@ int main(int argc, char *argv[])
 
     //todo
     //use case "Exact Change Only"
+
+    if(allPass) cout << endl << endl << "== all tests passed ==" << endl;
+    else cout << endl << endl << "!!" << endl << "!!" << "test failure, check log" << endl << "!!" << endl << "!!" << endl;
 }
