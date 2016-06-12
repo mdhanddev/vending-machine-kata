@@ -28,12 +28,7 @@ string VendingMachine::checkDisplay()
     }else if(coins.empty()){
         return "INSERT COIN";
     }else{
-        float total = 0;
-        for_each(coins.begin(), coins.end(), [&total](COIN &coin){
-            if(coin == COIN_DIME) total += .10;
-            if(coin == COIN_NICKEL) total += .05;
-            if(coin == COIN_QUARTER) total += .25;
-        });
+        float total = insertedCoinTotal();
         stringstream ss;
         ss << fixed << setprecision(2) << total;
         return ss.str();
@@ -82,12 +77,7 @@ void VendingMachine::pressReturnCoinsButton()
 void VendingMachine::pressSelectColaButton()
 {
     selectedProduct = PRODUCT_COLA;
-    float total = 0;
-    for_each(coins.begin(), coins.end(), [&total](COIN &coin){
-        if(coin == COIN_DIME) total += .10;
-        if(coin == COIN_NICKEL) total += .05;
-        if(coin == COIN_QUARTER) total += .25;
-    });
+    float total = insertedCoinTotal();
     if(total >= 1.00){
         dispenser.push_front(PRODUCT_COLA);
         selectedProduct = PRODUCT_NONE;
@@ -104,4 +94,15 @@ void VendingMachine::pressSelectChipsButton()
 void VendingMachine::pressSelectCandyButton()
 {
     selectedProduct = PRODUCT_CANDY;
+}
+
+float VendingMachine::insertedCoinTotal()
+{
+    float total = 0;
+    for_each(coins.begin(), coins.end(), [&total](COIN &coin){
+        if(coin == COIN_DIME) total += .10;
+        if(coin == COIN_NICKEL) total += .05;
+        if(coin == COIN_QUARTER) total += .25;
+    });
+    return total;
 }
