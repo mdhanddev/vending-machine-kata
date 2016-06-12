@@ -41,6 +41,7 @@ public:
     string withNoMoneySelectChipsCheckDisplayTwiceMachineDisplaysInsertCoins();
     string withNoMoneySelectCandyMachineDisplaysCandyPrice();
     string withNoMoneySelectCandyCheckDisplayTwiceMachineDisplaysInsertCoins();
+    string withShortMoneySelectColaMachineDisplaysColaPrice();
 };
 
 #endif // VENDINGMACHINETEST_H

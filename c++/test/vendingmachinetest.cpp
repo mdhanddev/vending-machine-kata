@@ -184,3 +184,11 @@ string VendingMachineTest::withNoMoneySelectCandyCheckDisplayTwiceMachineDisplay
     vm.checkDisplay();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withShortMoneySelectColaMachineDisplaysColaPrice()
+{
+    cleanMachineState();
+    insertDimeLikeCoin();
+    vm.pressSelectColaButton();
+    return vm.checkDisplay();
+}
