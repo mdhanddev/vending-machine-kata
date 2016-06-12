@@ -51,15 +51,15 @@ int main(int argc, char *argv[])
     allPass &= harness("exact change, select cola, cola dispensed", PRODUCT_COLA, vmt.withExactChangeSelectColaMachineDispensesCola());
     allPass &= harness("exact change, select cola, check display", (string)"THANK YOU", vmt.withExactChangeSelectColaMachineDisplaysThankYou());
     allPass &= harness("exact change, select cola, check display twice", (string)"INSERT COIN", vmt.withExactChangeSelectColaCheckDisplayTwiceMachineDisplaysInsertCoin());
+
+    //todo
+    //use case "Make Change"
     //todo buy soda with excess money, soda dispensed
     //todo buy soda with excess money, check display THANK YOU
     //todo buy soda with excess money, check display twice INSERT COINS
 
     //todo
     //use case "Sold Out"
-
-    //todo
-    //use case "Make Change"
 
     //todo
     //use case "Exact Change Only"
