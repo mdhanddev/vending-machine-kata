@@ -31,6 +31,7 @@ enum PRODUCT{
     PRODUCT_NONE,
     PRODUCT_COLA,
     PRODUCT_CHIPS,
+    PRODUCT_CANDY,
     PRODUCT_OTHER
 };
 
@@ -46,6 +47,7 @@ public:
     void pressReturnCoinsButton();
     void pressSelectColaButton();
     void pressSelectChipsButton();
+    void pressSelectCandyButton();
 
 private:
     deque<int> coins;

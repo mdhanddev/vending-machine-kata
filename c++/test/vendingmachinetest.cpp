@@ -169,3 +169,10 @@ string VendingMachineTest::withNoMoneySelectChipsCheckDisplayTwiceMachineDisplay
     vm.checkDisplay();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withNoMoneySelectCandyMachineDisplaysCandyPrice()
+{
+    cleanMachineState();
+    vm.pressSelectCandyButton();
+    return vm.checkDisplay();
+}
