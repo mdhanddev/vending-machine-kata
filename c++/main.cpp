@@ -22,8 +22,7 @@ int main(int argc, char *argv[])
     harness("machine display on dime", (string)"0.10", vmt.insertDimeLikeCoinMachineDisplaysTenCents());
     harness("machine display on nickel", (string)"0.05", vmt.insertNickelLikeCoinMachineDisplaysFiveCents());
     harness("machine display on quarter", (string)"0.25", vmt.insertQuarterLikeCoinMachineDisplaysTwentyFiveCents());
-    //todo inserting nickel (and check display)
-    //todo inserting quarter (and check display)
+    harness("machine display on invalid coin", (string)"INSERT COIN", vmt.insertInvalidCoinsMachineDisplaysInsertCoin());
     //todo inserting invalid coin (and check display)
 
     //todo

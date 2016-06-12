@@ -46,3 +46,14 @@ string VendingMachineTest::insertQuarterLikeCoinMachineDisplaysTwentyFiveCents()
     //check display
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::insertInvalidCoinsMachineDisplaysInsertCoin()
+{
+    //force coins to empty
+    vm.coins.clear();
+    //add several bogus coins
+    vm.insertCoin(CW_OTHER, CS_OTHER);
+    vm.insertCoin(CW_DIME, CS_NICKEL);
+    vm.insertCoin(CW_QUARTER, CS_OTHER);
+    return vm.checkDisplay();
+}
