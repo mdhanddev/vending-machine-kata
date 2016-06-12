@@ -21,6 +21,7 @@ enum COIN_SIZE{
     CS_OTHER
 };
 enum COIN{
+    COIN_NONE,
     COIN_DIME,
     COIN_NICKEL,
     COIN_QUARTER,
@@ -44,6 +45,8 @@ public:
 
     string checkDisplay();
     PRODUCT checkDispenser();
+    COIN checkCoinReturn();
+
     void insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize);
     void pressReturnCoinsButton();
     void pressSelectColaButton();
@@ -51,13 +54,15 @@ public:
     void pressSelectCandyButton();
 
 private:
-    deque<int> coins;
-    deque<int> coinreturn;
+    deque<COIN> coins;
+    deque<COIN> coinreturn;
     deque<PRODUCT> dispenser;
 
     PRODUCT selectedProduct;
 
     bool productPurchasedSinceLastDisplayCheck = false;
+
+    float insertedCoinTotal();
 };
 
 #endif // VENDINGMACHINE_H

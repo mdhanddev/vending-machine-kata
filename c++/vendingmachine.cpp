@@ -28,8 +28,8 @@ string VendingMachine::checkDisplay()
     }else if(coins.empty()){
         return "INSERT COIN";
     }else{
-        float total = 0;//in cents
-        for_each(coins.begin(), coins.end(), [&total](int &coin){
+        float total = 0;
+        for_each(coins.begin(), coins.end(), [&total](COIN &coin){
             if(coin == COIN_DIME) total += .10;
             if(coin == COIN_NICKEL) total += .05;
             if(coin == COIN_QUARTER) total += .25;
@@ -47,6 +47,16 @@ PRODUCT VendingMachine::checkDispenser()
         PRODUCT prod = dispenser.at(0);
         dispenser.pop_front();
         return prod;
+    }
+}
+
+COIN VendingMachine::checkCoinReturn()
+{
+    if(coinreturn.empty()) return COIN_NONE;
+    else{
+        COIN coin = coinreturn.at(0);
+        coinreturn.pop_front();
+        return coin;
     }
 }
 
@@ -73,7 +83,7 @@ void VendingMachine::pressSelectColaButton()
 {
     selectedProduct = PRODUCT_COLA;
     float total = 0;
-    for_each(coins.begin(), coins.end(), [&total](int &coin){
+    for_each(coins.begin(), coins.end(), [&total](COIN &coin){
         if(coin == COIN_DIME) total += .10;
         if(coin == COIN_NICKEL) total += .05;
         if(coin == COIN_QUARTER) total += .25;

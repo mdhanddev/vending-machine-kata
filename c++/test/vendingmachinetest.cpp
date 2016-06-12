@@ -14,6 +14,7 @@ void VendingMachineTest::cleanMachineState()
 {
     vm.coins.clear();
     vm.coinreturn.clear();
+    vm.dispenser.clear();
 }
 
 void VendingMachineTest::insertDimeLikeCoin()
@@ -108,11 +109,11 @@ bool VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins(
     vm.pressReturnCoinsButton();
 
     //coins get returned in reverse order
-    if(   vm.coinreturn.at(0) == COIN_DIME
-       && vm.coinreturn.at(1) == COIN_DIME
-       && vm.coinreturn.at(2) == COIN_NICKEL
-       && vm.coinreturn.at(3) == COIN_QUARTER
-       && vm.coinreturn.at(4) == COIN_QUARTER){
+    if(   vm.checkCoinReturn() == COIN_DIME
+       && vm.checkCoinReturn() == COIN_DIME
+       && vm.checkCoinReturn() == COIN_NICKEL
+       && vm.checkCoinReturn() == COIN_QUARTER
+       && vm.checkCoinReturn() == COIN_QUARTER){
         return true;
     }else{
         return false;
