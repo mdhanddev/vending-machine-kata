@@ -16,6 +16,9 @@ public:
 
     //helpers
     void cleanMachineState();
+    void insertDimeLikeCoin();
+    void insertNickelLikeCoin();
+    void insertQuarterLikeCoin();
 
     //use case "Accept Coins"
     string noCoinsInsertedVendingMachineDisplaysInsertCoin();

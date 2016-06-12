@@ -16,6 +16,21 @@ void VendingMachineTest::cleanMachineState()
     vm.coinreturn.clear();
 }
 
+void VendingMachineTest::insertDimeLikeCoin()
+{
+    vm.insertCoin(CW_DIME, CS_DIME);
+}
+
+void VendingMachineTest::insertNickelLikeCoin()
+{
+    vm.insertCoin(CW_NICKEL, CS_NICKEL);
+}
+
+void VendingMachineTest::insertQuarterLikeCoin()
+{
+    vm.insertCoin(CW_QUARTER, CS_QUARTER);
+}
+
 string VendingMachineTest::noCoinsInsertedVendingMachineDisplaysInsertCoin()
 {
     cleanMachineState();
@@ -26,7 +41,7 @@ string VendingMachineTest::insertDimeLikeCoinMachineDisplaysTenCents()
 {
     cleanMachineState();
     //add a dime-like coin
-    vm.insertCoin(CW_DIME, CS_DIME);
+    insertDimeLikeCoin();
     //check display
     return vm.checkDisplay();
 }
@@ -35,7 +50,7 @@ string VendingMachineTest::insertNickelLikeCoinMachineDisplaysFiveCents()
 {
     cleanMachineState();
     //add a nickel-like coin
-    vm.insertCoin(CW_NICKEL, CS_NICKEL);
+    insertNickelLikeCoin();
     //check display
     return vm.checkDisplay();
 }
@@ -44,7 +59,7 @@ string VendingMachineTest::insertQuarterLikeCoinMachineDisplaysTwentyFiveCents()
 {
     cleanMachineState();
     //add a quarter-like coin
-    vm.insertCoin(CW_QUARTER, CS_QUARTER);
+    insertQuarterLikeCoin();
     //check display
     return vm.checkDisplay();
 }
@@ -73,10 +88,10 @@ int VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasCoins()
 {
     cleanMachineState();
     //add several valid coins
-    vm.insertCoin(CW_DIME, CS_DIME);
-    vm.insertCoin(CW_QUARTER, CS_QUARTER);
-    vm.insertCoin(CW_DIME, CS_DIME);
-    vm.insertCoin(CW_NICKEL, CS_NICKEL);
+    insertDimeLikeCoin();
+    insertQuarterLikeCoin();
+    insertDimeLikeCoin();
+    insertNickelLikeCoin();
     vm.pressReturnCoinsButton();
     return vm.coinreturn.size();
 }

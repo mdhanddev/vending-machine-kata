@@ -38,6 +38,7 @@ public:
     void insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize);
     void pressReturnCoinsButton();
 
+private:
     deque<int> coins;
     deque<int> coinreturn;
 
