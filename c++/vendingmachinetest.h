@@ -15,6 +15,7 @@ public:
     VendingMachine vm;
 
     string noCoinsInsertedVendingMachineDisplaysInsertCoin();
+    string insertDimeLikeCoinMachineDisplaysTenCents();
 };
 
 #endif // VENDINGMACHINETEST_H

@@ -19,7 +19,9 @@ int main(int argc, char *argv[])
 
     //use case "Accept Coins"
     harness("machine display when no coins inserted", (string)"INSERT COIN", vmt.noCoinsInsertedVendingMachineDisplaysInsertCoin());
-    //todo inserting valid coin (and check display)
+    harness("machine display on dime", (string)"0.10", vmt.insertDimeLikeCoinMachineDisplaysTenCents());
+    //todo inserting nickel (and check display)
+    //todo inserting quarter (and check display)
     //todo inserting invalid coin (and check display)
 
     //todo

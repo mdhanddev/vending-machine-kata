@@ -16,3 +16,9 @@ string VendingMachineTest::noCoinsInsertedVendingMachineDisplaysInsertCoin()
     vm.coins.empty();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::insertDimeLikeCoinMachineDisplaysTenCents()
+{
+    vm.insertCoin(CW_DIME, CS_DIME);
+    return vm.checkDisplay();
+}
