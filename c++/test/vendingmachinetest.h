@@ -44,6 +44,7 @@ public:
     string withShortMoneySelectColaMachineDisplaysColaPrice();
     string withShortMoneySelectColaCheckDisplayTwiceMachineDisplaysCurrentTotal();
     string withShortMoneySelectChipsMachineDisplaysChipsPrice();
+    string withShortMoneySelectChipsCheckDisplayTwiceMachineDisplaysCurrentTotal();
 };
 
 #endif // VENDINGMACHINETEST_H

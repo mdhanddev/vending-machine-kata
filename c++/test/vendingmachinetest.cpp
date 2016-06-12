@@ -209,3 +209,12 @@ string VendingMachineTest::withShortMoneySelectChipsMachineDisplaysChipsPrice()
     vm.pressSelectChipsButton();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withShortMoneySelectChipsCheckDisplayTwiceMachineDisplaysCurrentTotal()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    vm.pressSelectChipsButton();
+    vm.checkDisplay();
+    return vm.checkDisplay();
+}
