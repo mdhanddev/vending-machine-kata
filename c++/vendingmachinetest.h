@@ -17,6 +17,7 @@ public:
     string noCoinsInsertedVendingMachineDisplaysInsertCoin();
     string insertDimeLikeCoinMachineDisplaysTenCents();
     string insertNickelLikeCoinMachineDisplaysFiveCents();
+    string insertQuarterLikeCoinMachineDisplaysTwentyFiveCents();
 };
 
 #endif // VENDINGMACHINETEST_H

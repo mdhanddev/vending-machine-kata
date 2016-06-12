@@ -11,16 +11,19 @@ using namespace std;
 enum COIN_WEIGHT{
     CW_DIME,
     CW_NICKEL,
+    CW_QUARTER,
     CW_OTHER
 };
 enum COIN_SIZE{
     CS_DIME,
     CS_NICKEL,
+    CS_QUARTER,
     CS_OTHER
 };
 enum COIN{
     COIN_DIME,
     COIN_NICKEL,
+    COIN_QUARTER,
     COIN_INVALID
 };
 

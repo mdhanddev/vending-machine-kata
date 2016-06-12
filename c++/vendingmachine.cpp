@@ -19,6 +19,7 @@ string VendingMachine::checkDisplay()
         for_each(coins.begin(), coins.end(), [&total](int &coin){
             if(coin == COIN_DIME) total += .10;
             if(coin == COIN_NICKEL) total += .05;
+            if(coin == COIN_QUARTER) total += .25;
         });
         stringstream ss;
         ss << fixed << setprecision(2) << total;
@@ -33,5 +34,7 @@ void VendingMachine::insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize)
         coins.push_front(COIN_DIME);
     }else if(cweight == CW_NICKEL && csize == CS_NICKEL){
         coins.push_front(COIN_NICKEL);
+    }else if(cweight == CW_QUARTER && csize == CS_QUARTER){
+        coins.push_front(COIN_QUARTER);
     }
 }

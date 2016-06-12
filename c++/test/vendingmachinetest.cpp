@@ -36,3 +36,13 @@ string VendingMachineTest::insertNickelLikeCoinMachineDisplaysFiveCents()
     //check display
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::insertQuarterLikeCoinMachineDisplaysTwentyFiveCents()
+{
+    //force coins to empty
+    vm.coins.clear();
+    //add a quarter-like coin
+    vm.insertCoin(CW_QUARTER, CS_QUARTER);
+    //check display
+    return vm.checkDisplay();
+}
