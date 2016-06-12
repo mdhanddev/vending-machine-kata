@@ -89,6 +89,10 @@ void VendingMachine::pressSelectColaButton()
 void VendingMachine::pressSelectChipsButton()
 {
     selectedProduct = PRODUCT_CHIPS;
+    float total = insertedCoinTotal();
+    if(total >= .50){
+        dispenser.push_front(PRODUCT_CHIPS);
+    }
 }
 
 void VendingMachine::pressSelectCandyButton()

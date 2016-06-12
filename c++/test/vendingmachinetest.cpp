@@ -270,3 +270,12 @@ string VendingMachineTest::withExactChangeSelectColaCheckDisplayTwiceMachineDisp
     vm.checkDisplay();
     return vm.checkDisplay();
 }
+
+PRODUCT VendingMachineTest::withExactChangeSelectChipsMachineDispensesChips()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    vm.pressSelectChipsButton();
+    return vm.checkDispenser();
+}

@@ -50,6 +50,7 @@ public:
     PRODUCT withExactChangeSelectColaMachineDispensesCola();
     string withExactChangeSelectColaMachineDisplaysThankYou();
     string withExactChangeSelectColaCheckDisplayTwiceMachineDisplaysInsertCoin();
+    PRODUCT withExactChangeSelectChipsMachineDispensesChips();
 };
 
 #endif // VENDINGMACHINETEST_H
