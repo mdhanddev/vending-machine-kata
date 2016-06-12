@@ -36,6 +36,7 @@ public:
 
     string checkDisplay();
     void insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize);
+    void pressReturnCoinsButton();
 
     deque<int> coins;
     deque<int> coinreturn;

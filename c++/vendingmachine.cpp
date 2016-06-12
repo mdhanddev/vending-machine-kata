@@ -40,3 +40,8 @@ void VendingMachine::insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize)
         coinreturn.push_front(COIN_INVALID);
     }
 }
+
+void VendingMachine::pressReturnCoinsButton()
+{
+    coinreturn.insert(coinreturn.end(), coins.begin(), coins.end());
+}

@@ -24,6 +24,9 @@ public:
     string insertQuarterLikeCoinMachineDisplaysTwentyFiveCents();
     string insertInvalidCoinsMachineDisplaysInsertCoin();
     int insertInvalidCoinsCoinReturnHasCoins();
+
+    //use case "Return Coins"
+    int insertValidCoinsPressReturnCoinsCoinReturnHasCoins();
 };
 
 #endif // VENDINGMACHINETEST_H

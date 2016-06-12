@@ -68,3 +68,15 @@ int VendingMachineTest::insertInvalidCoinsCoinReturnHasCoins()
     vm.insertCoin(CW_QUARTER, CS_OTHER);
     return vm.coinreturn.size();
 }
+
+int VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasCoins()
+{
+    cleanMachineState();
+    //add several valid coins
+    vm.insertCoin(CW_DIME, CS_DIME);
+    vm.insertCoin(CW_QUARTER, CS_QUARTER);
+    vm.insertCoin(CW_DIME, CS_DIME);
+    vm.insertCoin(CW_NICKEL, CS_NICKEL);
+    vm.pressReturnCoinsButton();
+    return vm.coinreturn.size();
+}
