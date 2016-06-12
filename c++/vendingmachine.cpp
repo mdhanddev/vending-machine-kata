@@ -92,7 +92,9 @@ void VendingMachine::pressSelectChipsButton()
     float total = insertedCoinTotal();
     if(total >= 0.50){
         dispenser.push_front(PRODUCT_CHIPS);
+        selectedProduct = PRODUCT_NONE;
         productPurchasedSinceLastDisplayCheck = true;
+        coins.clear();
     }
 }
 

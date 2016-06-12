@@ -288,3 +288,13 @@ string VendingMachineTest::withExactChangeSelectChipsMachineDisplaysThankYou()
     vm.pressSelectChipsButton();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withExactChangeSelectChipsCheckDisplayTwiceMachineDisplaysInsertCoin()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    insertQuarterLikeCoin();
+    vm.pressSelectChipsButton();
+    vm.checkDisplay();
+    return vm.checkDisplay();
+}
