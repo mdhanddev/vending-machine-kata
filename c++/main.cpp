@@ -29,13 +29,6 @@ int main(int argc, char *argv[])
     allPass &= harness("machine display on invalid coins", (string)"INSERT COIN", vmt.insertInvalidCoinsMachineDisplaysInsertCoin());
     allPass &= harness("coin return on invalid coins", 3, vmt.insertInvalidCoinsCoinReturnHasCoins());
 
-    //todo
-    //use case "Select Product"
-
-    //todo
-    //use case "Make Change"
-
-    //todo
     //use case "Return Coins"
     //todo insert N valid coins, press return coins, N coins are in return
     allPass &= harness("insert coins, press return, check coin return", 4, vmt.insertValidCoinsPressReturnCoinsCoinReturnHasCoins());
@@ -44,11 +37,19 @@ int main(int argc, char *argv[])
     allPass &= harness("insert coins, press return, check display", (string)"INSERT COIN", vmt.insertValidCoinsPressReturnCoinsMachineDisplaysInsertCoin());
 
     //todo
+    //use case "Select Product"
+
+    //todo
     //use case "Sold Out"
+
+    //todo
+    //use case "Make Change"
 
     //todo
     //use case "Exact Change Only"
 
     if(allPass) cout << endl << endl << "== all tests passed ==" << endl;
     else cout << endl << endl << "!!" << endl << "!!" << "test failure, check log" << endl << "!!" << endl << "!!" << endl;
+
+    return(0);
 }
