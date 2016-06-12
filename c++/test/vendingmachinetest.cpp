@@ -201,3 +201,11 @@ string VendingMachineTest::withShortMoneySelectColaCheckDisplayTwiceMachineDispl
     vm.checkDisplay();
     return vm.checkDisplay();
 }
+
+string VendingMachineTest::withShortMoneySelectChipsMachineDisplaysChipsPrice()
+{
+    cleanMachineState();
+    insertQuarterLikeCoin();
+    vm.pressSelectChipsButton();
+    return vm.checkDisplay();
+}
