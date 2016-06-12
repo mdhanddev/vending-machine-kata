@@ -1,4 +1,4 @@
-#include "vendingmachinetest.h"
+#include "test/vendingmachinetest.h"
 
 #include <iostream>
 
@@ -137,4 +137,12 @@ string VendingMachineTest::insertValidCoinsPressReturnCoinsMachineDisplaysInsert
     insertQuarterLikeCoin();
     vm.pressReturnCoinsButton();
     return vm.checkDisplay();
+}
+
+string VendingMachineTest::withNoMoneySelectColaMachineDisplaysColaPrice()
+{
+    cleanMachineState();
+    vm.pressSelectColaButton();
+    return vm.checkDisplay();
+
 }

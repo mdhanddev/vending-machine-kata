@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
     //todo
     //use case "Select Product"
-    //todo no money, press cola, check display PRICE 1.00
+    allPass &= harness("no money, select cola, check display", (string)"PRICE 1.00", vmt.withNoMoneySelectColaMachineDisplaysColaPrice());
     //todo no money, press cola, check display twice INSERT COINS
     //todo no money, prsss chips, check display PRICE 0.50
     //todo no money, press chips, check display twice INSERT COINS

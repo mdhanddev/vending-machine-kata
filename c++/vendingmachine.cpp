@@ -13,8 +13,11 @@ VendingMachine::VendingMachine()
 
 string VendingMachine::checkDisplay()
 {
-    if(coins.empty()) return "INSERT COIN";
-    else{
+    if(selectedProduct == PRODUCT_COLA){
+        return "PRICE 1.00";
+    }else if(coins.empty()){
+        return "INSERT COIN";
+    }else{
         float total = 0;//in cents
         for_each(coins.begin(), coins.end(), [&total](int &coin){
             if(coin == COIN_DIME) total += .10;
@@ -24,7 +27,6 @@ string VendingMachine::checkDisplay()
         stringstream ss;
         ss << fixed << setprecision(2) << total;
         return ss.str();
-
     }
 }
 
@@ -45,4 +47,9 @@ void VendingMachine::pressReturnCoinsButton()
 {
     coinreturn.insert(coinreturn.end(), coins.begin(), coins.end());
     coins.clear();
+}
+
+void VendingMachine::pressSelectColaButton()
+{
+    selectedProduct = PRODUCT_COLA;
 }

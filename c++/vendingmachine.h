@@ -27,6 +27,12 @@ enum COIN{
     COIN_INVALID
 };
 
+enum PRODUCT{
+    PRODUCT_NONE,
+    PRODUCT_COLA,
+    PRODUCT_OTHER
+};
+
 class VendingMachine
 {
     friend class VendingMachineTest;
@@ -37,11 +43,13 @@ public:
     string checkDisplay();
     void insertCoin(COIN_WEIGHT cweight, COIN_SIZE csize);
     void pressReturnCoinsButton();
+    void pressSelectColaButton();
 
 private:
     deque<int> coins;
     deque<int> coinreturn;
 
+    PRODUCT selectedProduct;
 };
 
 #endif // VENDINGMACHINE_H

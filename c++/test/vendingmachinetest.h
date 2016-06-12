@@ -33,6 +33,9 @@ public:
     bool insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins();
     int insertValidCoinsPressReturnCoinsMachineHasNoCoins();
     string insertValidCoinsPressReturnCoinsMachineDisplaysInsertCoin();
+
+    //use case "Select Product"
+    string withNoMoneySelectColaMachineDisplaysColaPrice();
 };
 
 #endif // VENDINGMACHINETEST_H
