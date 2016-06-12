@@ -32,6 +32,7 @@ public:
     int insertValidCoinsPressReturnCoinsCoinReturnHasCoins();
     bool insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins();
     int insertValidCoinsPressReturnCoinsMachineHasNoCoins();
+    string insertValidCoinsPressReturnCoinsMachineDisplaysInsertCoin();
 };
 
 #endif // VENDINGMACHINETEST_H

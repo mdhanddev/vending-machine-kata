@@ -40,9 +40,8 @@ int main(int argc, char *argv[])
     //todo insert N valid coins, press return coins, N coins are in return
     allPass &= harness("insert coins, press return, check coin return", 4, vmt.insertValidCoinsPressReturnCoinsCoinReturnHasCoins());
     allPass &= harness("insert coins, press return, check return for same coins", true, vmt.insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins());
-    //todo insert valid coins, press return coins, coins in machine is 0
     allPass &= harness("insert coins, press return, check for coins in machine", 0, vmt.insertValidCoinsPressReturnCoinsMachineHasNoCoins());
-    //todo insert valid coins, press return coins, display shows INSERT COIN
+    allPass &= harness("insert coins, press return, check display", (string)"INSERT COIN", vmt.insertValidCoinsPressReturnCoinsMachineDisplaysInsertCoin());
 
     //todo
     //use case "Sold Out"

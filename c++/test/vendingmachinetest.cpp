@@ -128,3 +128,13 @@ int VendingMachineTest::insertValidCoinsPressReturnCoinsMachineHasNoCoins()
     vm.pressReturnCoinsButton();
     return vm.coins.size();
 }
+
+string VendingMachineTest::insertValidCoinsPressReturnCoinsMachineDisplaysInsertCoin()
+{
+    cleanMachineState();
+    insertNickelLikeCoin();
+    insertNickelLikeCoin();
+    insertQuarterLikeCoin();
+    vm.pressReturnCoinsButton();
+    return vm.checkDisplay();
+}
