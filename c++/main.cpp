@@ -56,17 +56,22 @@ int main(int argc, char *argv[])
     allPass &= harness("exact change, select chips, check display twice", (string)"INSERT COIN", vmt.withExactChangeSelectChipsCheckDisplayTwiceMachineDisplaysInsertCoin());
     allPass &= harness("exact change, select candy, candy dispensed", PRODUCT_CANDY, vmt.withExactChangeSelectCandyMachineDispensesCandy());
     allPass &= harness("exact change, select candy, check display", (string)"THANK YOU", vmt.withExactChangeSelectCandyMachineDisplaysThankYou());
-    //todo exact change, select candy, check display twice
     allPass &= harness("exact change, select candy, check display twice", (string)"INSERT COIN", vmt.withExactChangeSelectCandyCheckDisplayTwiceMachineDisplaysInsertCoin());
 
     //todo
     //use case "Make Change"
-    //todo buy soda with excess money, soda dispensed
-    //todo buy soda with excess money, check display THANK YOU
-    //todo buy soda with excess money, check display twice INSERT COINS
+    //todo buy cola with excess money, soda dispensed
+    //todo buy cola with excess money, check change in coin return
+    //todo buy chips with excess money, chips dispensed
+    //todo buy chips with excess money, check change in coin return
+    //todo buy candy with excess money, chandy dispensed
+    //todo buy candy with excess money, check change in coin return
 
     //todo
     //use case "Sold Out"
+    //todo set cola inventory to 0, select soda, check display, sold out
+    //todo set cola inventory to 0, select soda, check display twice, insert coin
+    //todo set cola inventory to 0, insert coins, select soda, check display twice, shows coin total
 
     //todo
     //use case "Exact Change Only"
