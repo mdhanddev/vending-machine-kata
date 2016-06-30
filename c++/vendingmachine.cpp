@@ -90,23 +90,17 @@ void VendingMachine::pressReturnCoinsButton()
 
 void VendingMachine::pressSelectColaButton()
 {
-    selectedProduct = PRODUCT_COLA;
-    selectedProductCost = PRICE_COLA;
-    attemptPurchase();
+    attemptPurchase(PRODUCT_COLA, PRICE_COLA);
 }
 
 void VendingMachine::pressSelectChipsButton()
 {
-    selectedProduct = PRODUCT_CHIPS;
-    selectedProductCost = PRICE_CHIPS;
-    attemptPurchase();
+    attemptPurchase(PRODUCT_CHIPS, PRICE_CHIPS);
 }
 
 void VendingMachine::pressSelectCandyButton()
 {
-    selectedProduct = PRODUCT_CANDY;
-    selectedProductCost = PRICE_CANDY;
-    attemptPurchase();
+    attemptPurchase(PRODUCT_CANDY, PRICE_CANDY);
 }
 
 float VendingMachine::insertedCoinTotal()
@@ -120,8 +114,11 @@ float VendingMachine::insertedCoinTotal()
     return total;
 }
 
-void VendingMachine::attemptPurchase()
+void VendingMachine::attemptPurchase(PRODUCT product, float productPrice)
 {
+    selectedProduct = product;
+    selectedProductCost = productPrice;
+
     float total = insertedCoinTotal();
     if(total >= selectedProductCost){
         dispenser.push_front(selectedProduct);

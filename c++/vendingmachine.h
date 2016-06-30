@@ -70,7 +70,7 @@ private:
     bool productPurchasedSinceLastDisplayCheck = false;
 
     float insertedCoinTotal();
-    void attemptPurchase();
+    void attemptPurchase(PRODUCT product, float productPrice);
 };
 
 #endif // VENDINGMACHINE_H
