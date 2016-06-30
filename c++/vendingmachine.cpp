@@ -17,6 +17,7 @@ const float VendingMachine::VALUE_QUARTER = 0.25;
 
 VendingMachine::VendingMachine()
 {
+    selectedProduct = PRODUCT_NONE;
 }
 
 string VendingMachine::checkDisplay()
@@ -26,21 +27,23 @@ string VendingMachine::checkDisplay()
     if(productPurchasedSinceLastDisplayCheck){
         productPurchasedSinceLastDisplayCheck = false;
         return "THANK YOU";
-    }else if(selectedProduct == PRODUCT_COLA){
+    }else if(selectedProduct != PRODUCT_NONE){
+        ss << "PRICE " << fixed << setprecision(2);
+
+        if(selectedProduct == PRODUCT_COLA){
+            ss << PRICE_COLA;
+        }else if(selectedProduct == PRODUCT_CHIPS){
+            ss << PRICE_CHIPS;
+        }else if(selectedProduct == PRODUCT_CANDY){
+            ss << PRICE_CANDY;
+        }
+
         selectedProduct = PRODUCT_NONE;
-        ss << "PRICE " << fixed << setprecision(2) << PRICE_COLA;
-    }else if(selectedProduct == PRODUCT_CHIPS){
-        selectedProduct = PRODUCT_NONE;
-        ss << "PRICE " << fixed << setprecision(2) << PRICE_CHIPS;
-    }else if(selectedProduct == PRODUCT_CANDY){
-        selectedProduct = PRODUCT_NONE;
-        ss << "PRICE " << fixed << setprecision(2) << PRICE_CANDY;
     }else if(coins.empty()){
         ss << "INSERT COIN";
     }else{
         float total = insertedCoinTotal();
         ss << fixed << setprecision(2) << total;
-        return ss.str();
     }
 
     return ss.str();
