@@ -59,6 +59,14 @@ private:
     PRODUCT selectedProduct;
     float selectedProductCost;
 
+    static float PRICE_COLA;
+    static float PRICE_CHIPS;
+    static float PRICE_CANDY;
+
+    static const float VALUE_NICKEL;
+    static const float VALUE_DIME;
+    static const float VALUE_QUARTER;
+
     bool productPurchasedSinceLastDisplayCheck = false;
 
     float insertedCoinTotal();
