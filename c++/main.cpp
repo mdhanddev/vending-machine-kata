@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     //use case "Exact Change Only"
 
     if(allPass) cout << endl << endl << "== all tests passed ==" << endl;
-    else cout << endl << endl << "!!" << endl << "!!" << "test failure, check log" << endl << "!!" << endl << "!!" << endl;
+    else cout << endl << endl << "!!" << endl << "!!" << endl << "test failure, check log" << endl << "!!" << endl << "!!" << endl;
 
     return(0);
 }
