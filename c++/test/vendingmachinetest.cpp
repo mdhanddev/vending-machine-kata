@@ -10,7 +10,7 @@ VendingMachineTest::VendingMachineTest()
 {
 }
 
-void VendingMachineTest::cleanMachineState()
+void VendingMachineTest::setUp()
 {
     vm.pressReturnCoinsButton();
     while(COIN_NONE != vm.checkCoinReturn()){}
@@ -34,13 +34,13 @@ void VendingMachineTest::insertQuarterLikeCoin()
 
 string VendingMachineTest::noCoinsInsertedVendingMachineDisplaysInsertCoin()
 {
-    cleanMachineState();
+    setUp();
     return vm.checkDisplay();
 }
 
 string VendingMachineTest::insertDimeLikeCoinMachineDisplaysTenCents()
 {
-    cleanMachineState();
+    setUp();
     //add a dime-like coin
     insertDimeLikeCoin();
     //check display
@@ -49,7 +49,7 @@ string VendingMachineTest::insertDimeLikeCoinMachineDisplaysTenCents()
 
 string VendingMachineTest::insertNickelLikeCoinMachineDisplaysFiveCents()
 {
-    cleanMachineState();
+    setUp();
     //add a nickel-like coin
     insertNickelLikeCoin();
     //check display
@@ -58,7 +58,7 @@ string VendingMachineTest::insertNickelLikeCoinMachineDisplaysFiveCents()
 
 string VendingMachineTest::insertQuarterLikeCoinMachineDisplaysTwentyFiveCents()
 {
-    cleanMachineState();
+    setUp();
     //add a quarter-like coin
     insertQuarterLikeCoin();
     //check display
@@ -67,7 +67,7 @@ string VendingMachineTest::insertQuarterLikeCoinMachineDisplaysTwentyFiveCents()
 
 string VendingMachineTest::insertInvalidCoinsMachineDisplaysInsertCoin()
 {
-    cleanMachineState();
+    setUp();
     //add several bogus coins
     vm.insertCoin(CW_OTHER, CS_OTHER);
     vm.insertCoin(CW_DIME, CS_NICKEL);
@@ -77,7 +77,7 @@ string VendingMachineTest::insertInvalidCoinsMachineDisplaysInsertCoin()
 
 int VendingMachineTest::insertInvalidCoinsCoinReturnHasCoins()
 {
-    cleanMachineState();
+    setUp();
     //add several bogus coins
     vm.insertCoin(CW_OTHER, CS_OTHER);
     vm.insertCoin(CW_DIME, CS_NICKEL);
@@ -91,7 +91,7 @@ int VendingMachineTest::insertInvalidCoinsCoinReturnHasCoins()
 
 int VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasCoins()
 {
-    cleanMachineState();
+    setUp();
     //add several valid coins
     insertDimeLikeCoin();
     insertQuarterLikeCoin();
@@ -107,7 +107,7 @@ int VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasCoins()
 
 bool VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins()
 {
-    cleanMachineState();
+    setUp();
     //add several valid coins
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
@@ -130,7 +130,7 @@ bool VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins(
 
 int VendingMachineTest::insertValidCoinsPressReturnCoinsMachineHasNoCoins()
 {
-    cleanMachineState();
+    setUp();
     insertNickelLikeCoin();
     insertDimeLikeCoin();
     insertQuarterLikeCoin();
@@ -144,7 +144,7 @@ int VendingMachineTest::insertValidCoinsPressReturnCoinsMachineHasNoCoins()
 
 string VendingMachineTest::insertValidCoinsPressReturnCoinsMachineDisplaysInsertCoin()
 {
-    cleanMachineState();
+    setUp();
     insertNickelLikeCoin();
     insertNickelLikeCoin();
     insertQuarterLikeCoin();
@@ -154,7 +154,7 @@ string VendingMachineTest::insertValidCoinsPressReturnCoinsMachineDisplaysInsert
 
 string VendingMachineTest::withNoMoneySelectColaMachineDisplaysColaPrice()
 {
-    cleanMachineState();
+    setUp();
     vm.pressSelectColaButton();
     return vm.checkDisplay();
 
@@ -162,7 +162,7 @@ string VendingMachineTest::withNoMoneySelectColaMachineDisplaysColaPrice()
 
 string VendingMachineTest::withNoMoneySelectColaCheckDisplayTwiceMachineDisplaysInsertCoins()
 {
-    cleanMachineState();
+    setUp();
     vm.pressSelectColaButton();
     vm.checkDisplay();
     return vm.checkDisplay();
@@ -170,14 +170,14 @@ string VendingMachineTest::withNoMoneySelectColaCheckDisplayTwiceMachineDisplays
 
 string VendingMachineTest::withNoMoneySelectChipsMachineDisplaysChipsPrice()
 {
-    cleanMachineState();
+    setUp();
     vm.pressSelectChipsButton();
     return vm.checkDisplay();
 }
 
 string VendingMachineTest::withNoMoneySelectChipsCheckDisplayTwiceMachineDisplaysInsertCoins()
 {
-    cleanMachineState();
+    setUp();
     vm.pressSelectChipsButton();
     vm.checkDisplay();
     return vm.checkDisplay();
@@ -185,14 +185,14 @@ string VendingMachineTest::withNoMoneySelectChipsCheckDisplayTwiceMachineDisplay
 
 string VendingMachineTest::withNoMoneySelectCandyMachineDisplaysCandyPrice()
 {
-    cleanMachineState();
+    setUp();
     vm.pressSelectCandyButton();
     return vm.checkDisplay();
 }
 
 string VendingMachineTest::withNoMoneySelectCandyCheckDisplayTwiceMachineDisplaysInsertCoins()
 {
-    cleanMachineState();
+    setUp();
     vm.pressSelectCandyButton();
     vm.checkDisplay();
     return vm.checkDisplay();
@@ -200,7 +200,7 @@ string VendingMachineTest::withNoMoneySelectCandyCheckDisplayTwiceMachineDisplay
 
 string VendingMachineTest::withShortMoneySelectColaMachineDisplaysColaPrice()
 {
-    cleanMachineState();
+    setUp();
     insertDimeLikeCoin();
     vm.pressSelectColaButton();
     return vm.checkDisplay();
@@ -208,7 +208,7 @@ string VendingMachineTest::withShortMoneySelectColaMachineDisplaysColaPrice()
 
 string VendingMachineTest::withShortMoneySelectColaCheckDisplayTwiceMachineDisplaysCurrentTotal()
 {
-    cleanMachineState();
+    setUp();
     insertDimeLikeCoin();
     vm.pressSelectColaButton();
     vm.checkDisplay();
@@ -217,7 +217,7 @@ string VendingMachineTest::withShortMoneySelectColaCheckDisplayTwiceMachineDispl
 
 string VendingMachineTest::withShortMoneySelectChipsMachineDisplaysChipsPrice()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     vm.pressSelectChipsButton();
     return vm.checkDisplay();
@@ -225,7 +225,7 @@ string VendingMachineTest::withShortMoneySelectChipsMachineDisplaysChipsPrice()
 
 string VendingMachineTest::withShortMoneySelectChipsCheckDisplayTwiceMachineDisplaysCurrentTotal()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     vm.pressSelectChipsButton();
     vm.checkDisplay();
@@ -234,7 +234,7 @@ string VendingMachineTest::withShortMoneySelectChipsCheckDisplayTwiceMachineDisp
 
 string VendingMachineTest::withShortMoneySelectCandyMachineDisplaysCandyPrice()
 {
-    cleanMachineState();
+    setUp();
     insertNickelLikeCoin();
     vm.pressSelectCandyButton();
     return vm.checkDisplay();
@@ -242,7 +242,7 @@ string VendingMachineTest::withShortMoneySelectCandyMachineDisplaysCandyPrice()
 
 string VendingMachineTest::withShortMoneySelectCandyCheckDisplayTwiceMachineDisplaysCurrentTotal()
 {
-    cleanMachineState();
+    setUp();
     insertNickelLikeCoin();
     vm.pressSelectCandyButton();
     vm.checkDisplay();
@@ -251,7 +251,7 @@ string VendingMachineTest::withShortMoneySelectCandyCheckDisplayTwiceMachineDisp
 
 PRODUCT VendingMachineTest::withExactChangeSelectColaMachineDispensesCola()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
@@ -262,7 +262,7 @@ PRODUCT VendingMachineTest::withExactChangeSelectColaMachineDispensesCola()
 
 string VendingMachineTest::withExactChangeSelectColaMachineDisplaysThankYou()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
@@ -273,7 +273,7 @@ string VendingMachineTest::withExactChangeSelectColaMachineDisplaysThankYou()
 
 string VendingMachineTest::withExactChangeSelectColaCheckDisplayTwiceMachineDisplaysInsertCoin()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
@@ -285,7 +285,7 @@ string VendingMachineTest::withExactChangeSelectColaCheckDisplayTwiceMachineDisp
 
 PRODUCT VendingMachineTest::withExactChangeSelectChipsMachineDispensesChips()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
     vm.pressSelectChipsButton();
@@ -294,7 +294,7 @@ PRODUCT VendingMachineTest::withExactChangeSelectChipsMachineDispensesChips()
 
 string VendingMachineTest::withExactChangeSelectChipsMachineDisplaysThankYou()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
     vm.pressSelectChipsButton();
@@ -303,7 +303,7 @@ string VendingMachineTest::withExactChangeSelectChipsMachineDisplaysThankYou()
 
 string VendingMachineTest::withExactChangeSelectChipsCheckDisplayTwiceMachineDisplaysInsertCoin()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
     vm.pressSelectChipsButton();
@@ -313,7 +313,7 @@ string VendingMachineTest::withExactChangeSelectChipsCheckDisplayTwiceMachineDis
 
 PRODUCT VendingMachineTest::withExactChangeSelectCandyMachineDispensesCandy()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
     insertDimeLikeCoin();
@@ -324,7 +324,7 @@ PRODUCT VendingMachineTest::withExactChangeSelectCandyMachineDispensesCandy()
 
 string VendingMachineTest::withExactChangeSelectCandyMachineDisplaysThankYou()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
     insertDimeLikeCoin();
@@ -335,7 +335,7 @@ string VendingMachineTest::withExactChangeSelectCandyMachineDisplaysThankYou()
 
 string VendingMachineTest::withExactChangeSelectCandyCheckDisplayTwiceMachineDisplaysInsertCoin()
 {
-    cleanMachineState();
+    setUp();
     insertQuarterLikeCoin();
     insertQuarterLikeCoin();
     insertDimeLikeCoin();

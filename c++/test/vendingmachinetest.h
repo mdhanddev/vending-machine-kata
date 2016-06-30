@@ -15,7 +15,7 @@ public:
     VendingMachine vm;
 
     //helpers
-    void cleanMachineState();
+    void setUp();
     void insertDimeLikeCoin();
     void insertNickelLikeCoin();
     void insertQuarterLikeCoin();
