@@ -38,8 +38,6 @@ enum PRODUCT{
 
 class VendingMachine
 {
-    friend class VendingMachineTest;
-
 public:
     VendingMachine();
 

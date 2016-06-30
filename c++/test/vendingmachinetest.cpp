@@ -82,7 +82,11 @@ int VendingMachineTest::insertInvalidCoinsCoinReturnHasCoins()
     vm.insertCoin(CW_OTHER, CS_OTHER);
     vm.insertCoin(CW_DIME, CS_NICKEL);
     vm.insertCoin(CW_QUARTER, CS_OTHER);
-    return vm.coinreturn.size();
+    int numCoinsReturned = 0;
+    while(vm.checkCoinReturn() != COIN_NONE){
+        ++numCoinsReturned;
+    }
+    return numCoinsReturned;
 }
 
 int VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasCoins()
@@ -94,7 +98,11 @@ int VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasCoins()
     insertDimeLikeCoin();
     insertNickelLikeCoin();
     vm.pressReturnCoinsButton();
-    return vm.coinreturn.size();
+    int numCoinsReturned = 0;
+    while(vm.checkCoinReturn() != COIN_NONE){
+        ++numCoinsReturned;
+    }
+    return numCoinsReturned;
 }
 #include <algorithm>
 bool VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins()
@@ -127,7 +135,11 @@ int VendingMachineTest::insertValidCoinsPressReturnCoinsMachineHasNoCoins()
     insertDimeLikeCoin();
     insertQuarterLikeCoin();
     vm.pressReturnCoinsButton();
-    return vm.coins.size();
+    int numCoinsInMachine = 3;
+    while(vm.checkCoinReturn() != COIN_NONE){
+        --numCoinsInMachine;
+    }
+    return numCoinsInMachine;
 }
 
 string VendingMachineTest::insertValidCoinsPressReturnCoinsMachineDisplaysInsertCoin()
