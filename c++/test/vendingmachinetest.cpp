@@ -104,7 +104,7 @@ int VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasCoins()
     }
     return numCoinsReturned;
 }
-#include <algorithm>
+
 bool VendingMachineTest::insertValidCoinsPressReturnCoinsCoinReturnHasSameCoins()
 {
     cleanMachineState();
